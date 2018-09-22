@@ -1,0 +1,29 @@
+
+{
+    "gastoramaApp": {
+        "command" : {
+            "home": {
+                "title": "Commands",
+                "createLabel": "Créer un nouveau Command",
+                "createOrEditLabel": "Créer ou éditer un Command",
+                "search": "Recherche pour Command"
+            },
+            "created": "Un nouveau Command a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Command avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Command avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Command {{ id }} ?"
+            },
+            "detail": {
+                "title": "Command"
+            },
+            "sumprice": "Sumprice",
+            "deliveryAddress": "Delivery Address",
+            "date": "Date",
+            "delivery": "Delivery",
+            "state": "State",
+            "commandLine": "Command Line",
+            "userId": "User Id"
+        }
+    }
+}

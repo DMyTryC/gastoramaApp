@@ -1,0 +1,14 @@
+<div id="info-product-cart">
+    <li class="info-name">{{prod.name}}<button class="trash btn-sm btn btn-danger" (click)="throwProduct()">{{trash}}</button>
+    </li>
+    <li class="info-price">{{prod.price}} €</li>
+    <li class="cart-quantity-box" [ngSwitch]="isEditing">
+        <button *ngSwitchCase="false" class="cart-quantity-remove btn btn-light btn-sm" [hidden]="!prod.isInCart" (click)='remove()'>-</button>
+        <input *ngSwitchCase="false" class="cart-quantity-input form-control form-control-sm" [hidden]="!prod.isInCart" name="quantityOrdered" (click)="edition()" value="{{prod.quantity}}"/>
+        <button *ngSwitchCase="false" class="cart-quantity-add btn btn-light btn-sm" [hidden]="!prod.isInCart" (click)='add()'>+</button>
+
+        <button *ngSwitchCase="true" class="cart-quantity-remove btn btn-danger btn-sm" [hidden]="!prod.isInCart" (click)='cancelEdition()'>X</button>
+        <input *ngSwitchCase="true" class="cart-quantity-input form-control form-control-sm" [hidden]="!prod.isInCart" (keyup.enter)="confirmEdition()" name="quantityOrdered" type="number" [(ngModel)]="quantityEdited"/>
+        <button *ngSwitchCase="true" class="btn-green cart-quantity-add btn btn-success btn-sm" [hidden]="!prod.isInCart" (click)='confirmEdition()'>OK</button>
+    </li>
+</div>

@@ -1,0 +1,40 @@
+<div id="cart-box" [hidden]="products.length == 0">
+    <h2 class="cart-title">Votre Panier</h2>
+    <div class="cart-total">
+        <p>Total : {{total}} €</p>
+    </div>
+    <div class="cart-main-btn">
+        <button class="btn btn-outline-danger" (click)="openModal()">Vider</button>
+        <button class="btn btn-success" (click)="confirmCart()">Valider</button>
+    </div>
+    <div id="cart-products-box" class="scrollable">
+        <div *ngFor="let p of products">
+            <jhi-product-details-cart [prod]="p">
+            </jhi-product-details-cart>
+        </div>
+    </div>
+
+    <!-- Modal section -->
+    <div class="backdrop" [ngStyle]="{'display':display}"></div>
+
+    <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+        <div class="modal-dialog" role="document">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">VIDER LE PANIER ?</h2>
+                </div>
+
+                <!-- model body section -->
+                <div class="modal-body">
+                    <p>Cette action va supprimer l'ensemble des éléments présents actuellement dans votre panier. <div class="text-important">Attention</div>Vous ne pourrez-pas revenir en arrière. Souhaitez-vous tout de même vider votre panier en cours ?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" (click)="onCloseHandled()">Annuler</button>
+                    <button type="button" class="btn btn-danger" (click)="emptyCart()">Je veux vider mon Panier</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

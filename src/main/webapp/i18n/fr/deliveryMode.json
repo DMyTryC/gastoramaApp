@@ -1,0 +1,9 @@
+{
+    "gastoramaApp": {
+        "DeliveryMode" : {
+            "null": "",
+            "DOMICILE": "DOMICILE",
+            "PATISSERIE": "PATISSERIE"
+        }
+    }
+}

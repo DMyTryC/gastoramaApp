@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Photo.
+    -->
+    <changeSet id="20180910144359-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="product_id"
+                                 baseTableName="photo"
+                                 constraintName="fk_photo_product_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product"/>
+
+        <addForeignKeyConstraint baseColumnNames="product_type_id"
+                                 baseTableName="photo"
+                                 constraintName="fk_photo_product_type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product_type"/>
+
+        <addForeignKeyConstraint baseColumnNames="confectioner_id"
+                                 baseTableName="photo"
+                                 constraintName="fk_photo_confectioner_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="confectioner"/>
+
+    </changeSet>
+</databaseChangeLog>

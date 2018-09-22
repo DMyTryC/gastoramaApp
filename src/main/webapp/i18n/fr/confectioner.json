@@ -1,0 +1,27 @@
+
+{
+    "gastoramaApp": {
+        "confectioner" : {
+            "home": {
+                "title": "Confectioners",
+                "createLabel": "Créer un nouveau Confectioner",
+                "createOrEditLabel": "Créer ou éditer un Confectioner",
+                "search": "Recherche pour Confectioner"
+            },
+            "created": "Un nouveau Confectioner a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Confectioner avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Confectioner avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Confectioner {{ id }} ?"
+            },
+            "detail": {
+                "title": "Confectioner"
+            },
+            "address": "Address",
+            "description": "Description",
+            "product": "Product",
+            "photo": "Photo",
+            "userId": "User Id"
+        }
+    }
+}

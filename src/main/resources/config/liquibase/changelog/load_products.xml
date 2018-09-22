@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity CommandLine.
+    -->
+    <changeSet id="load-1" author="rsn">
+      <loadData encoding="UTF-8"
+        file="config/liquibase/datas/confectioners.csv"
+        separator=";"
+        tableName="confectioner">
+      </loadData>
+      <loadData encoding="UTF-8"
+        file="config/liquibase/datas/confectionerPhotos.csv"
+        separator=";"
+        tableName="confectioner_photo">
+      </loadData>
+      <loadData encoding="UTF-8"
+        file="config/liquibase/datas/productTypes.csv"
+        separator=";"
+        tableName="product_type">
+      </loadData>
+      <loadData encoding="UTF-8"
+        file="config/liquibase/datas/productTypePhotos.csv"
+        separator=";"
+        tableName="product_type_photo">
+      </loadData>
+      <loadData encoding="UTF-8"
+        file="config/liquibase/datas/ingredients.csv"
+        separator=";"
+        tableName="ingredient">
+      </loadData>
+      <loadData encoding="UTF-8"
+        file="config/liquibase/datas/products.csv"
+        separator=";"
+        tableName="product">
+      </loadData>
+      <loadData encoding="UTF-8"
+                file="config/liquibase/datas/productPhotos.csv"
+                separator=";"
+                tableName="product_photo">
+      </loadData>
+      <loadData encoding="UTF-8"
+                file="config/liquibase/datas/commands.csv"
+                separator=";"
+                tableName="command">
+      </loadData>
+      <loadData encoding="UTF-8"
+                file="config/liquibase/datas/commandLines.csv"
+                separator=";"
+                tableName="command_line">
+      </loadData>
+    </changeSet>
+</databaseChangeLog>

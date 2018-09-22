@@ -1,0 +1,146 @@
+@import "../../../layouts/main/main.scss";
+
+$scale-value: 1.1;
+$scale-duration: 100ms;
+
+#info-product {
+  position: relative;
+
+  background-color: $colordk;
+  color: $colorlg;
+  border: solid 1px;
+
+  padding: 5px;
+  margin: 5px;
+  width: 200px;
+  height: 280px;
+
+  -webkit-transition: all $scale-duration ease-;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  -moz-transition: all $scale-duration ease-in;
+  -moz-transform: scale(1);
+  transition: all $scale-duration ease-in;
+  transform: scale(1);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+#info-product:hover {
+  /*background-color: $colorlg;
+  color: $colordk;*/
+  z-index: 2;
+  border: solid white;
+  -webkit-transition: all $scale-duration ease-in;
+  -webkit-transform: scale($scale-value);
+  -ms-transform: scale($scale-value);
+  -moz-transition: all $scale-duration ease-in;
+  -moz-transform: scale($scale-value);
+  transition: all $scale-duration ease-in;
+  transform: scale($scale-value);
+}
+
+ul {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 3px 0;
+  font-size: 15px;
+}
+
+.info-name {
+  width: 90%;
+  overflow: hidden;
+}
+
+.info-name p {
+  font-family: soda;
+  font-size: 1.9em;
+  margin-bottom: 1px;
+}
+
+.slide-left p {
+  transition-property: transform;
+  transition: all 1s linear;
+  transform: translate(0.1%);
+}
+
+.slide-left p:hover {
+  transition-delay: 0.5s;
+  transition: all 3s ease-in;
+  transform: translate(-100%);
+}
+
+.info-price {
+  font-size: 16px;
+  text-align: center;
+}
+
+.info-weight {
+}
+
+.info-pieces {
+}
+
+.info-pass-date {
+}
+
+.info-stock {
+}
+
+.overview-product-img {
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid 0.9px;
+  border-radius: 100%;
+}
+
+.cart-quantity-box {
+  display: block;
+  margin-top: 5px;
+}
+
+.cart-quantity-remove {
+  display: inline-flex;
+  font-weight: bold;
+}
+
+.cart-quantity-input {
+  width: 50px;
+  display: inline-flex;
+  text-align: center;
+}
+
+.cart-quantity-add {
+  display: inline-flex;
+  font-weight: bold;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.test:hover {
+  cursor: pointer;
+}

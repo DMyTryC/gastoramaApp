@@ -1,0 +1,90 @@
+ entity Product {
+      name String required
+      price Integer required
+      weight Integer
+      pieces Integer
+      passDate Instant required
+      stock Integer
+  }
+
+  entity ProductType {
+      name String required
+  }
+  
+  entity ProductPhoto {
+      url String required
+  }
+  
+  entity ProductTypePhoto {
+      url String required
+  }
+  
+  entity ConfectionerPhoto {
+  	url String required
+  }
+
+  entity Ingredient {
+      name String required
+      allergen Boolean required
+  }
+
+  enum DeliveryMode {
+      DOMICILE, PATISSERIE
+  }
+
+  entity Confectioner {
+      name String required
+      address String required
+      description String
+      login String required
+      password String required
+
+  }
+
+  entity Client {
+      firstname String required
+      lastname String required
+      mail String required
+      password String required
+      isAccountEnabled Boolean required
+  }
+
+  entity Administrator {
+      login String required
+      password String required
+  }
+
+  entity Command {
+      sumprice Integer required
+      deliveryAddress String required
+      date Instant required
+      delivery DeliveryMode required
+      state State required
+  }
+  
+  enum State {
+  	VALIDATED,READY_TO_GO,SEND,DONE
+  }
+
+  entity CommandLine {
+      quantity Integer required
+  }
+  
+  relationship ManyToMany {
+  	Ingredient to Product
+  }
+  
+  relationship ManyToOne {
+  	CommandLine to Product
+  }
+
+  relationship OneToMany {
+      Confectioner{product} to Product{confectioner}
+      Client{command} to Command{client}
+      Command{commandLine} to CommandLine{command}
+      ProductType{product} to Product{productType}
+      
+      Product{photo} to ProductPhoto{product}
+      ProductType{photo} to ProductTypePhoto{productType}
+      Confectioner{photo} to ConfectionerPhoto{confectioner}
+  }

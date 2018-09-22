@@ -1,0 +1,102 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-command-heading" jhiTranslate="gastoramaApp.command.home.createOrEditLabel">Create or edit a Command</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!command.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="command.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gastoramaApp.command.sumprice" for="field_sumprice">Sumprice</label>
+                    <input type="number" class="form-control" name="sumprice" id="field_sumprice"
+                        [(ngModel)]="command.sumprice" required/>
+                    <div [hidden]="!(editForm.controls.sumprice?.dirty && editForm.controls.sumprice?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.sumprice?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.sumprice?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gastoramaApp.command.deliveryAddress" for="field_deliveryAddress">Delivery Address</label>
+                    <input type="text" class="form-control" name="deliveryAddress" id="field_deliveryAddress"
+                        [(ngModel)]="command.deliveryAddress" required/>
+                    <div [hidden]="!(editForm.controls.deliveryAddress?.dirty && editForm.controls.deliveryAddress?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.deliveryAddress?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gastoramaApp.command.date" for="field_date">Date</label>
+                    <div class="d-flex">
+                        <input id="field_date" type="datetime-local" class="form-control" name="date" [(ngModel)]="date"
+                        required/>
+                    </div>
+                    <div [hidden]="!(editForm.controls.date?.dirty && editForm.controls.date?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.date?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.date?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gastoramaApp.command.delivery" for="field_delivery">Delivery</label>
+                    <select class="form-control" name="delivery" [(ngModel)]="command.delivery" id="field_delivery"  required>
+                        <option value="DOMICILE">{{'gastoramaApp.DeliveryMode.DOMICILE' | translate}}</option>
+                        <option value="PATISSERIE">{{'gastoramaApp.DeliveryMode.PATISSERIE' | translate}}</option>
+                    </select>
+                    <div [hidden]="!(editForm.controls.delivery?.dirty && editForm.controls.delivery?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.delivery?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gastoramaApp.command.state" for="field_state">State</label>
+                    <select class="form-control" name="state" [(ngModel)]="command.state" id="field_state"  required>
+                        <option value="VALIDATED">{{'gastoramaApp.State.VALIDATED' | translate}}</option>
+                        <option value="READY_TO_GO">{{'gastoramaApp.State.READY_TO_GO' | translate}}</option>
+                        <option value="SEND">{{'gastoramaApp.State.SEND' | translate}}</option>
+                        <option value="DONE">{{'gastoramaApp.State.DONE' | translate}}</option>
+                    </select>
+                    <div [hidden]="!(editForm.controls.state?.dirty && editForm.controls.state?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.state?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gastoramaApp.command.userId" for="field_userId">User Id</label>
+                    <select class="form-control" id="field_userId" name="userId" [(ngModel)]="command.userId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id === command.userId?.id ? command.userId : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

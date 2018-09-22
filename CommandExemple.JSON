@@ -1,0 +1,9 @@
+{
+  "commandLines": [{"product": {"id": 7},"quantity": 1}],
+  "date": "2018-09-14T14:27:51.061Z",
+  "delivery": "DOMICILE",
+  "deliveryAddress": "string",
+  "state": "VALIDATED",
+  "sumprice": 1,
+  "userId": {"id": 1}
+}

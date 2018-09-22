@@ -1,0 +1,11 @@
+id;name;price;weight;pieces;pass_date;stock;confectioner_id;product_type_id
+9;Meringues;2;200;1;2018-12-31;17;1;1
+10;Religieuse au chocolat;1;100;1;2018-12-31;50;2;5
+11;Opéra;4;300;2;2018-12-31;23;1;2
+12;Tarte aux fruits;6;200;3;2018-12-31;18;1;3
+13;Tarte aux citrons;5;150;2;2018-12-31;94;2;4
+14;éclair à la vanille;2;50;1;2018-12-31;52;1;2
+15;Religieuse au café;2;60;1;2018-12-31;6;1;3
+16;Mille-feuille;3;80;1;2018-12-31;12;2;1
+17;Brownie;5;160;1;2018-12-31;78;1;5
+18;Framboisier;7;400;6;2018-12-31;34;1;3

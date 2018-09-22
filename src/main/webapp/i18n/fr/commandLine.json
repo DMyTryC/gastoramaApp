@@ -1,0 +1,25 @@
+
+{
+    "gastoramaApp": {
+        "commandLine" : {
+            "home": {
+                "title": "CommandLines",
+                "createLabel": "Créer un nouveau Command Line",
+                "createOrEditLabel": "Créer ou éditer un Command Line",
+                "search": "Recherche pour Command Line"
+            },
+            "created": "Un nouveau Command Line a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Command Line avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Command Line avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Command Line {{ id }} ?"
+            },
+            "detail": {
+                "title": "Command Line"
+            },
+            "quantity": "Quantity",
+            "product": "Product",
+            "command": "Command"
+        }
+    }
+}

@@ -1,0 +1,78 @@
+ entity Product {
+      name String
+      price Integer
+      weight Integer
+      pieces Integer
+      passDate Instant
+      stock Integer
+  }
+
+  entity ProductType {
+      name String
+  }
+
+  entity Photo {
+      url String
+  }
+
+  entity Ingredient {
+      name String
+      allergen Boolean
+  }
+  
+  enum DeliveryMode {
+      DOMICILE, PATISSERIE
+  }
+
+  entity Confectioner {
+      name String
+      address String
+      description String
+      login String
+      password String
+
+  }
+
+  entity Client {
+      firstname String
+      lastname String
+      mail String
+      password String
+      isAccountEnabled Boolean
+  }
+
+  entity Administrator {
+      login String
+      password String
+  }
+
+  entity Command {
+      id Integer
+      sumprice Integer
+      deliveryAddress String
+      date Instant
+      delivery DeliveryMode
+  }
+
+  entity CommandLine {
+      quantity Integer
+  }
+
+  relationship OneToOne {
+      Command to Client
+
+      CommandLine to Product
+      CommandLine to Command
+
+      Product to Confectioner
+      Product to ProductType
+  }
+
+  relationship OneToMany {
+      Product{composition} to Ingredient
+      Product to Photo
+
+      ProductType to Photo
+
+      Confectioner to Photo
+  }

@@ -1,0 +1,97 @@
+@import "app/layouts/main/main.scss";
+
+#product-details {
+  background-color: $colordk;
+  color: $colorlg;
+  border: solid 0.5px;
+  margin: 5px;
+  position: relative;
+  padding: 5px 0px;
+  min-width: 200px;
+  border-radius: 5px;
+}
+
+ul {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  padding: 0 5px 0;
+  font-size: 15px;
+}
+
+.info-name {
+  font-family: soda;
+  font-size: 1.8em;
+  text-align: center;
+  margin: 1px;
+}
+
+.info-price {
+  font-size: 16px;
+  text-align: center;
+}
+
+.info-weight {
+}
+
+.info-pieces {
+}
+
+.info-pass-date {
+}
+
+.info-stock {
+}
+
+.overview-product-img {
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid 0.9px;
+  border-radius: 100%;
+}
+
+.cart-quantity-box {
+  display: block;
+}
+
+.cart-quantity-remove {
+  display: inline-flex;
+  font-weight: bold;
+}
+
+.cart-quantity-input {
+  width: 50%;
+  display: inline-flex;
+  text-align: center;
+}
+
+.cart-quantity-add {
+  display: inline-flex;
+  font-weight: bold;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.btn-gasto {
+}
+
+.btn-gasto:hover {
+}

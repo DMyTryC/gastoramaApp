@@ -1,0 +1,4 @@
+from project root :
+docker build -t gastorama:latest src/main/docker
+
+docker-compose -f src/main/docker/app.yml up

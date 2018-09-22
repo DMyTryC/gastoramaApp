@@ -1,0 +1,33 @@
+
+{
+    "gastoramaApp": {
+        "product" : {
+            "home": {
+                "title": "Products",
+                "createLabel": "Créer un nouveau Product",
+                "createOrEditLabel": "Créer ou éditer un Product",
+                "search": "Recherche pour Product"
+            },
+            "created": "Un nouveau Product a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Product avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Product avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Product {{ id }} ?"
+            },
+            "detail": {
+                "title": "Product"
+            },
+            "name": "Name",
+            "price": "Price",
+            "weight": "Weight",
+            "pieces": "Pieces",
+            "passDate": "Pass Date",
+            "stock": "Stock",
+            "photo": "Photo",
+            "confectioner": "Confectioner",
+            "productType": "Product Type",
+            "commandLine": "Command Line",
+            "ingredient": "Ingredient"
+        }
+    }
+}

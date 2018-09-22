@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="productPhoto">
+            <h2><span jhiTranslate="gastoramaApp.productPhoto.detail.title">Product Photo</span> {{productPhoto.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gastoramaApp.productPhoto.url">Url</span></dt>
+                <dd>
+                    <span>{{productPhoto.url}}</span>
+                </dd>
+                <dt><span jhiTranslate="gastoramaApp.productPhoto.product">Product</span></dt>
+                <dd>
+                    <div *ngIf="productPhoto.product">
+                        <a [routerLink]="['/product', productPhoto.product?.id, 'view']">{{productPhoto.product?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/product-photo', productPhoto.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

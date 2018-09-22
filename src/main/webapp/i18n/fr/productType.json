@@ -1,0 +1,25 @@
+
+{
+    "gastoramaApp": {
+        "productType" : {
+            "home": {
+                "title": "ProductTypes",
+                "createLabel": "Créer un nouveau Product Type",
+                "createOrEditLabel": "Créer ou éditer un Product Type",
+                "search": "Recherche pour Product Type"
+            },
+            "created": "Un nouveau Product Type a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Product Type avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Product Type avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Product Type {{ id }} ?"
+            },
+            "detail": {
+                "title": "Product Type"
+            },
+            "name": "Name",
+            "product": "Product",
+            "photo": "Photo"
+        }
+    }
+}

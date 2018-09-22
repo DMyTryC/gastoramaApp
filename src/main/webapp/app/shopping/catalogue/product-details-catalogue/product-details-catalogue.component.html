@@ -1,0 +1,23 @@
+<ul id="info-product">
+  <div class="test" (click)="router.navigate(['shopping/productDetails/' + prod.id])">
+
+    <img class="overview-product-img" src="https://staticmedia.fauchon.com/media/catalog/product/cache/1/image/480x/040ec09b1e35df139433887a97daa66f/2/3/232056.jpg">
+    <li class="info-name text-nowrap" [ngClass]="{'slide-left': isTooLong}"><p>{{prod.name}}</p></li>
+
+  </div>
+  <li class="info-price">{{prod.price}} €</li>
+  <li class="info-stock">Available : {{prod.stock}}</li>
+  <li class="info-weight">~{{prod.weight}}g ({{prod.pieces}} pieces)</li>
+  <li>
+    <div class="cart-quantity-box" [ngSwitch]="isEditing">
+      <button class="btn-first-add cart-button btn btn-success" [hidden]="prod.isInCart" (click)='$event.preventDefault();$event.stopPropagation();add()'>Ajout panier</button>
+      <button *ngSwitchCase="false" class="btn-gasto cart-quantity-remove btn btn-light " [hidden]="!prod.isInCart" (click)='$event.preventDefault();$event.stopPropagation();remove()'>-</button>
+      <input *ngSwitchCase="false" class="cart-quantity-input form-control form-control" [hidden]="!prod.isInCart" name="quantityOrdered" (click)="$event.preventDefault();$event.stopPropagation();edition()" value="{{prod.quantity}}"/>
+      <button *ngSwitchCase="false" class="btn-gasto cart-quantity-add btn btn-light btn" [hidden]="!prod.isInCart" (click)='$event.preventDefault();$event.stopPropagation();add()'>+</button>
+
+      <button *ngSwitchCase="true" class="btn-gasto cart-quantity-remove btn btn-danger btn" [hidden]="!prod.isInCart" (click)='$event.preventDefault();$event.stopPropagation();cancelEdition()'>X</button>
+      <input *ngSwitchCase="true" class="cart-quantity-input form-control form-control" [hidden]="!prod.isInCart" (keyup.enter)="$event.preventDefault();$event.stopPropagation();confirmEdition()" name="quantityOrdered" type="number" [(ngModel)]="quantityEdited"/>
+      <button *ngSwitchCase="true" class="btn-gasto cart-quantity-add btn btn-success btn" [hidden]="!prod.isInCart" (click)='$event.preventDefault();$event.stopPropagation();confirmEdition()'>OK</button>
+    </div>
+  </li>
+</ul>

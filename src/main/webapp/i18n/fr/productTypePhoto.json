@@ -1,0 +1,24 @@
+
+{
+    "gastoramaApp": {
+        "productTypePhoto" : {
+            "home": {
+                "title": "ProductTypePhotos",
+                "createLabel": "Créer un nouveau Product Type Photo",
+                "createOrEditLabel": "Créer ou éditer un Product Type Photo",
+                "search": "Recherche pour Product Type Photo"
+            },
+            "created": "Un nouveau Product Type Photo a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Product Type Photo avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Product Type Photo avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Product Type Photo {{ id }} ?"
+            },
+            "detail": {
+                "title": "Product Type Photo"
+            },
+            "url": "Url",
+            "productType": "Product Type"
+        }
+    }
+}

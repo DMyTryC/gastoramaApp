@@ -1,0 +1,48 @@
+$colorlg: #ffd000;
+$colordk: #3f1f09;
+$boot-green: #28a745;
+
+* {
+  font-family: Verdana, sans-serif;
+  font-size: 1em;
+  font-style: normal;
+}
+
+h1 {
+  font-family: chocolat, sans-serif;
+  font-size: 3.5em;
+  color: $colorlg;
+  text-align: center;
+}
+
+.container-fluid {
+  background: url("https://media.vogue.in/wp-content/uploads/2017/11/Should-you-be-giving-up-on-your-everyday-wheat-Heres-our-take-vogue-india.jpg")
+    no-repeat;
+  background-size: cover;
+}
+
+.jh-card {
+  background: none;
+  margin: 0 auto;
+  border: none;
+}
+
+.gasto-form {
+  background-color: $colordk;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 0 auto;
+  width: 30%;
+  text-align: center;
+  height: 100%;
+}
+
+.gasto-form ul {
+  list-style: none;
+}
+
+.gasto-form input[type="text"],
+.gasto-form input[type="password"] {
+  width: 200px;
+  margin: 0 auto;
+}

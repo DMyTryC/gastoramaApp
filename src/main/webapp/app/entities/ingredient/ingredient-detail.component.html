@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="ingredient">
+            <h2><span jhiTranslate="gastoramaApp.ingredient.detail.title">Ingredient</span> {{ingredient.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gastoramaApp.ingredient.name">Name</span></dt>
+                <dd>
+                    <span>{{ingredient.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="gastoramaApp.ingredient.allergen">Allergen</span></dt>
+                <dd>
+                    <span>{{ingredient.allergen}}</span>
+                </dd>
+                <dt><span jhiTranslate="gastoramaApp.ingredient.product">Product</span></dt>
+                <dd>
+                    <span *ngFor="let product of ingredient.products; let last = last">
+                        <a [routerLink]="['/product', product?.id, 'view' ]">{{product.id}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/ingredient', ingredient.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

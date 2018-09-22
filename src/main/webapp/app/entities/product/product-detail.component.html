@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="product">
+            <h2><span jhiTranslate="gastoramaApp.product.detail.title">Product</span> {{product.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gastoramaApp.product.name">Name</span></dt>
+                <dd>
+                    <span>{{product.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="gastoramaApp.product.price">Price</span></dt>
+                <dd>
+                    <span>{{product.price}}</span>
+                </dd>
+                <dt><span jhiTranslate="gastoramaApp.product.weight">Weight</span></dt>
+                <dd>
+                    <span>{{product.weight}}</span>
+                </dd>
+                <dt><span jhiTranslate="gastoramaApp.product.pieces">Pieces</span></dt>
+                <dd>
+                    <span>{{product.pieces}}</span>
+                </dd>
+                <dt><span jhiTranslate="gastoramaApp.product.passDate">Pass Date</span></dt>
+                <dd>
+                    <span>{{product.passDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="gastoramaApp.product.stock">Stock</span></dt>
+                <dd>
+                    <span>{{product.stock}}</span>
+                </dd>
+                <dt><span jhiTranslate="gastoramaApp.product.confectioner">Confectioner</span></dt>
+                <dd>
+                    <div *ngIf="product.confectioner">
+                        <a [routerLink]="['/confectioner', product.confectioner?.id, 'view']">{{product.confectioner?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gastoramaApp.product.productType">Product Type</span></dt>
+                <dd>
+                    <div *ngIf="product.productType">
+                        <a [routerLink]="['/product-type', product.productType?.id, 'view']">{{product.productType?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/product', product.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

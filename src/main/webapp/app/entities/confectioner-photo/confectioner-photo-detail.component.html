@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="confectionerPhoto">
+            <h2><span jhiTranslate="gastoramaApp.confectionerPhoto.detail.title">Confectioner Photo</span> {{confectionerPhoto.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gastoramaApp.confectionerPhoto.url">Url</span></dt>
+                <dd>
+                    <span>{{confectionerPhoto.url}}</span>
+                </dd>
+                <dt><span jhiTranslate="gastoramaApp.confectionerPhoto.confectioner">Confectioner</span></dt>
+                <dd>
+                    <div *ngIf="confectionerPhoto.confectioner">
+                        <a [routerLink]="['/confectioner', confectionerPhoto.confectioner?.id, 'view']">{{confectionerPhoto.confectioner?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/confectioner-photo', confectionerPhoto.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+
+{
+    "gastoramaApp": {
+        "confectionerPhoto" : {
+            "home": {
+                "title": "ConfectionerPhotos",
+                "createLabel": "Créer un nouveau Confectioner Photo",
+                "createOrEditLabel": "Créer ou éditer un Confectioner Photo",
+                "search": "Recherche pour Confectioner Photo"
+            },
+            "created": "Un nouveau Confectioner Photo a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Confectioner Photo avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Confectioner Photo avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Confectioner Photo {{ id }} ?"
+            },
+            "detail": {
+                "title": "Confectioner Photo"
+            },
+            "url": "Url",
+            "confectioner": "Confectioner"
+        }
+    }
+}

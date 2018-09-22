@@ -1,0 +1,43 @@
+<div id="product-details">
+    <button class="btn btn-primary" (click)="router.navigate(['/shopping'])">Retour</button>
+    <div id="info-product-cart" *ngIf="prod">
+        <div *ngIf="prod.photos">
+            <div *ngFor="let photo of prod.photos">
+                <img class="overview-product-img" [src]="photo.url">
+            </div>
+        </div>
+        <p *ngIf="prod.productType">type : {{prod.productType.name}}</p>
+        <h1>Product : {{prod.name}}</h1>
+        <p class="info-price">{{prod.price}} €</p>
+        <p>Poids : {{prod.weight}}</p>
+        <p>Parts : {{prod.pieces}}</p>
+        <p> sotck restant : {{prod.stock}}</p>
+        <ul>
+            <li class="cart-quantity-box" [ngSwitch]="isEditing">
+                <button class="cart-button btn btn-primary btn-sm" [hidden]="prod.isInCart" (click)='$event.preventDefault();$event.stopPropagation();add()'>Ajout panier</button>
+                <div class="cart-quantity-box" [ngSwitch]="isEditing">
+                    <button  *ngSwitchCase="false" class="cart-quantity-remove btn btn-primary btn-sm" [hidden]="!prod.isInCart" (click)='$event.preventDefault();$event.stopPropagation();remove()'>-</button>
+                    <input *ngSwitchCase="false" class="cart-quantity-input form-control form-control-sm" [hidden]="!prod.isInCart" name="quantityOrdered" (click)="$event.preventDefault();$event.stopPropagation();edition()" value="{{prod.quantity}}"/>
+                    <button *ngSwitchCase="false" class="cart-quantity-add btn btn-primary btn-sm" [hidden]="!prod.isInCart" (click)='$event.preventDefault();$event.stopPropagation();add()'>+</button>
+
+                    <button *ngSwitchCase="true" class="cart-quantity-remove btn btn-primary btn-sm" [hidden]="!prod.isInCart" (click)='$event.preventDefault();$event.stopPropagation();cancelEdition()'>X</button>
+                    <input *ngSwitchCase="true" class="cart-quantity-input form-control form-control-sm" [hidden]="!prod.isInCart" (click)="$event.preventDefault();$event.stopPropagation();" (keyup.enter)="$event.preventDefault();$event.stopPropagation();confirmEdition()" name="quantityOrdered" type="number" [(ngModel)]="quantityEdited"/>
+                    <button *ngSwitchCase="true" class="cart-quantity-add btn btn-primary btn-sm" [hidden]="!prod.isInCart" (click)='$event.preventDefault();$event.stopPropagation();confirmEdition()'>OK</button>
+                </div>
+            </li>
+        </ul>
+        <p>Date de préremption : {{prod.passDate}}</p>
+        <div *ngIf="prod.confectioner">
+            <h2>Pâtissier</h2>
+            <p>Nom : {{prod.confectioner.userId.firstName}} {{prod.confectioner.userId.lastName}}</p>
+            <p>description: {{prod.confectioner.description}}</p>
+        </div>
+        <div *ngIf="prod.ingredients">
+            <h2>
+                <div *ngFor="let i of prod.ingredients">
+                    <p>Nom : {{i.name}}, allergene : {{i.allergen}}</p>
+                </div>
+            </h2>
+        </div>
+    </div>
+</div>

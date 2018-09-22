@@ -1,0 +1,11 @@
+{
+    "gastoramaApp": {
+        "State" : {
+            "null": "",
+            "VALIDATED": "VALIDATED",
+            "READY_TO_GO": "READY_TO_GO",
+            "SEND": "SEND",
+            "DONE": "DONE"
+        }
+    }
+}

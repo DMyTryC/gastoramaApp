@@ -1,0 +1,22 @@
+<h1>Connectez-vous à votre espace personnel</h1>
+<form class="gasto-form form" role="form" (ngSubmit)="login()">
+    <label class="username-label" for="username" jhiTranslate="global.form.username">Login</label>
+    <ul>
+        <li>
+            <input type="text" class="form-control" name="username" id="username" placeholder="{{'global.form.username.placeholder' | translate}}" [(ngModel)]="username"/>
+        </li>
+        <li>
+            <label for="password" jhiTranslate="login.form.password">Password</label>
+        </li>
+        <li>
+            <input type="password" class="form-control" name="password" id="password" placeholder="{{'login.form.password.placeholder' | translate}}"
+                   [(ngModel)]="password"/>
+        </li>
+        <li>
+            <label><input class="form-check-input" type="checkbox" name="rememberMe" id="rememberMe" [(ngModel)]="rememberMe" checked/>Se souvenir de moi</label>
+        </li>
+        <li>
+            <button type="submit" class="btn btn-primary" jhiTranslate="login.form.button">Se connecter</button>
+        </li>
+    </ul>
+</form>
